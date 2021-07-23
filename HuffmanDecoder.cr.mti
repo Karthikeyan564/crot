@@ -1,0 +1,78 @@
+/home/motasem/research/MAS_tapeout/September_2020/compression_Algorithms/myRTL/comparator.sv {1 {vlog -work work -sv -stats=none /home/motasem/research/MAS_tapeout/September_2020/compression_Algorithms/myRTL/comparator.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module comparator
+
+Top level modules:
+	comparator
+
+} {} {}} /home/motasem/research/MAS_tapeout/September_2020/compression_Algorithms/myRTL/Huffman_tb.sv {1 {vlog -work work -sv -stats=none /home/motasem/research/MAS_tapeout/September_2020/compression_Algorithms/myRTL/Huffman_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Huffman_tb
+
+Top level modules:
+	Huffman_tb
+
+} {} {}} /home/motasem/research/MAS_tapeout/September_2020/compression_Algorithms/myRTL/Huffman.sv {1 {vlog -work work -sv -stats=none /home/motasem/research/MAS_tapeout/September_2020/compression_Algorithms/myRTL/Huffman.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Huffman
+
+Top level modules:
+	Huffman
+
+} {} {}} /home/motasem/research/MAS_tapeout/September_2020/compression_Algorithms/myRTL/comparator_tb.sv {1 {vlog -work work -sv -stats=none /home/motasem/research/MAS_tapeout/September_2020/compression_Algorithms/myRTL/comparator_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module comparator_tb
+
+Top level modules:
+	comparator_tb
+
+} {} {}} /home/motasem/research/MAS_tapeout/September_2020/compression_Algorithms/myRTL/FIFO_SR.sv {1 {vlog -work work -sv -stats=none /home/motasem/research/MAS_tapeout/September_2020/compression_Algorithms/myRTL/FIFO_SR.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module FIFO_SR
+
+Top level modules:
+	FIFO_SR
+
+} {} {}} /home/motasem/research/MAS_tapeout/September_2020/compression_Algorithms/myRTL/encoder.sv {1 {vlog -work work -sv -stats=none /home/motasem/research/MAS_tapeout/September_2020/compression_Algorithms/myRTL/encoder.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module encoder
+
+Top level modules:
+	encoder
+
+} {} {}} /home/motasem/research/MAS_tapeout/September_2020/compression_Algorithms/myRTL/shiftRegister_tb.sv {1 {vlog -work work -sv -stats=none /home/motasem/research/MAS_tapeout/September_2020/compression_Algorithms/myRTL/shiftRegister_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module shiftRegister_tb
+
+Top level modules:
+	shiftRegister_tb
+
+} {} {}} /home/motasem/research/MAS_tapeout/September_2020/compression_Algorithms/myRTL/shiftRegister.sv {1 {vlog -work work -sv -stats=none /home/motasem/research/MAS_tapeout/September_2020/compression_Algorithms/myRTL/shiftRegister.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module shiftRegister
+
+Top level modules:
+	shiftRegister
+
+} {} {}} /home/motasem/research/MAS_tapeout/September_2020/compression_Algorithms/myRTL/FIFObuffer_tb.sv {1 {vlog -work work -sv -stats=none /home/motasem/research/MAS_tapeout/September_2020/compression_Algorithms/myRTL/FIFObuffer_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module FIFObuffer_tb
+
+Top level modules:
+	FIFObuffer_tb
+
+} {} {}} /home/motasem/research/MAS_tapeout/September_2020/compression_Algorithms/myRTL/encoder_tb.sv {1 {vlog -work work -sv -stats=none /home/motasem/research/MAS_tapeout/September_2020/compression_Algorithms/myRTL/encoder_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module encoder_tb
+
+Top level modules:
+	encoder_tb
+
+} {} {}} /home/motasem/research/MAS_tapeout/September_2020/compression_Algorithms/myRTL/FIFO_SR_tb.sv {1 {vlog -work work -sv -stats=none /home/motasem/research/MAS_tapeout/September_2020/compression_Algorithms/myRTL/FIFO_SR_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module FIFO_SR_tb
+
+Top level modules:
+	FIFO_SR_tb
+
+} {} {}}
