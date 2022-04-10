@@ -11,24 +11,24 @@ cModel Technology
 Z0 dC:/Users/ZaKaye/Desktop/Pixiv/MEng_Study_2022_Winter/MEng2500Y/githubs/mga_folder_cleanup/Mask-Generation/sim
 vmask_gen_VGA_tb
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1649626512
+Z2 !s110 1649626805
 !i10b 1
-!s100 aX5UYKOPOHIb;TXmo]WW`0
+!s100 3^_fJ<RagW[Z3:_QF?dmR0
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I1[E1hQiZ<`L4kk[EEYj^U0
+I]N566Dbd69_X<Sa>o^V0B3
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1649626478
+w1649626583
 8../tb/mask_gen_VGA_tb.sv
 F../tb/mask_gen_VGA_tb.sv
-!i122 3
-L0 1 156
+!i122 7
+L0 1 171
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1649626512.000000
+Z6 !s108 1649626805.000000
 !s107 ../tb/mask_gen_VGA_tb.sv|
 !s90 -reportprogress|300|../tb/mask_gen_VGA_tb.sv|
 !i113 1
@@ -38,16 +38,16 @@ vmask_generation_VGA
 R1
 R2
 !i10b 1
-!s100 zez`fZhhGKWz_1AH::ILn0
+!s100 RXTi]PHZ77hE_<7`f;F@@0
 R3
-Inh3zNaI^<iG1nT5T7UZTC1
+IIZK22KbC7[30fACzFh3ie2
 R4
 S1
 R0
-w1649625760
+w1649626797
 8../rtl/mask_generation_VGA.sv
 F../rtl/mask_generation_VGA.sv
-!i122 2
+!i122 6
 L0 29 991
 R5
 r1
