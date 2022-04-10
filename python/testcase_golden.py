@@ -4,8 +4,8 @@ from utils import convert_binstring_to_bin_list
 from utils import convert_bin_list_to_hexstring
 
 def main():
-    with open("../testcases.txt", "r") as fd_tests:
-        fd_tests_raw_output = open("../testcases_sw_output.txt", "w")
+    with open("../testcase_raws/testcases.txt", "r") as fd_tests:
+        fd_tests_raw_output = open("../testcase_raws/testcases_sw_output.txt", "w")
         
         testcases = fd_tests.readlines()
         for testcase in testcases:

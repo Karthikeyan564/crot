@@ -1,10 +1,10 @@
 from utils import read_results
 
 def main():    
-    sw_results, sw_results_count = read_results("../testcases_sw_output.txt")
-    hw_results, hw_results_count = read_results("../testcases_hw_output.txt")
+    sw_results, sw_results_count = read_results("../testcase_raws/testcases_sw_output.txt")
+    hw_results, hw_results_count = read_results("../testcase_raws/testcases_hw_output.txt")
     
-    fd_tests_summary = open("../testcases_summary.txt", "w")
+    fd_tests_summary = open("../testcase_raws/testcases_summary.txt", "w")
     if sw_results_count != hw_results_count:
         fd_tests_summary.write("Number of results differ for software({}) and hardware({}) files\n".format(sw_results_count, hw_results_count))
         

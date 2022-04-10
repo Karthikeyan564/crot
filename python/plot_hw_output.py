@@ -4,7 +4,7 @@ from utils import read_results
 from utils import convert_hexstring_to_bin_list
 
 def main():    
-    hw_results, hw_results_count = read_results("../testcases_hw_output.txt")
+    hw_results, hw_results_count = read_results("../testcase_raws/testcases_hw_output.txt")
     
     for index in range(0, hw_results_count):
         hw_output_len = len(hw_results[index]["output"])
@@ -20,7 +20,7 @@ def main():
         array = np.asarray(bin_list_2d, dtype=np.uint8)
         
         img = Image.fromarray(array)
-        img.save(filename)
+        img.save("../testcase_raws/"+filename)
     
 if __name__ == "__main__":
     main()
