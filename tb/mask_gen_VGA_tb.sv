@@ -124,8 +124,21 @@ module mask_gen_VGA_tb ();
 			
 		close_file(fd_tests);
 		close_file(fd_tests_raw_output);
+			
+		// Get golden result from software
+		$system($sformatf("python ../python/testcase_golden.py"));
+		$system($sformatf("python ../python/compare_output.py"));
+		
+		fd_tests_summary = $fopen("../testcases_summary.txt", "r");
+		while($fgets(line, fd_tests_summary))
+		begin
+			$display(line);
+		end
+		close_file(fd_tests_summary);
+		
 		
 		$stop(0);
+	
     end
 	
 	always @(negedge clk) 
