@@ -93,8 +93,15 @@ module mask_gen_VGA_tb ();
 					load_pattern = 1'b0;
 				end
 				
-				default:
+				default: // Random
 				begin
+					for (int i = 31; i >= 0; i--) // Do sliding right/left only need to load in the specified length?
+					begin
+						pattern = full_pattern[i];
+						load_pattern = 1'b1;
+						#(period);
+						load_pattern = 1'b0;
+					end
 				end
 			endcase
 			
@@ -120,15 +127,26 @@ module mask_gen_VGA_tb ();
 		if (rp_valid)
 		begin
 			$fwrite(fd_tests_raw_output, "%h\n", mg_mask);
-			case (mask_type)
+			case (mask_type)				
 				2'b11:  // Repeated Pattern
 				begin
 					done = 1;
 					$fwrite(fd_tests_raw_output, "Output end\n");
 				end
 				
-				default :
+				default : // Random Pattern
 				begin
+					if (num_rows_done == 480)	// Cycles needed for one frame
+					begin
+						num_rows_done = 0;
+						
+						done = 1;
+						$fwrite(fd_tests_raw_output, "Output end\n");
+					end
+					else
+					begin
+						num_rows_done = num_rows_done + 1;
+					end
 				end
 			endcase
 			
