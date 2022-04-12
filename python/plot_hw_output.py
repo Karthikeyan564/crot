@@ -15,6 +15,10 @@ def main():
             convert_hexstring_to_bin_list(each_hexstring, temp_bin_list)
             temp_bin_list = [0 if x == 0 else 255 for x in temp_bin_list]
             bin_list_2d.append(temp_bin_list)
+            
+        if hw_results[index]["testcase"].split(" ")[0] == "11": # Temporarily here since MGA's repeated pattern is only set to outputs one row
+            for _ in range(0, 479):
+                bin_list_2d.append(bin_list_2d[0])
         
         filename = str(index) + "__" + hw_results[index]["testcase"].replace(" ", "_") + ".png"
         array = np.asarray(bin_list_2d, dtype=np.uint8)
