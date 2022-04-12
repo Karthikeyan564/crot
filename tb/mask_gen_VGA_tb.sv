@@ -37,13 +37,13 @@ module mask_gen_VGA_tb ();
     end
 	
 	// Testcase read/related
-	int fd_tests = $fopen("../testcase_raws/testcases.txt", "r");
+	int fd_tests = $fopen("../testcase_raws/vga_testcases.txt", "r");
 	int read_test = 0;
 	string line;
 	logic [0:31] full_pattern;
 	logic [0:639] mg_mask_sliding_init_state;
 	
-	int fd_tests_raw_output = $fopen("../testcase_raws/testcases_hw_output.txt", "w");
+	int fd_tests_raw_output = $fopen("../testcase_raws/vga_testcases_hw_output.txt", "w");
 	
 	int fd_tests_summary = 0;
 	
@@ -126,10 +126,10 @@ module mask_gen_VGA_tb ();
 		close_file(fd_tests_raw_output);
 			
 		// Get golden result from software
-		$system($sformatf("python ../python/testcase_golden.py"));
-		$system($sformatf("python ../python/compare_output.py"));
+		$system($sformatf("python ../python/vga_testcase_golden.py"));
+		$system($sformatf("python ../python/vga_compare_output.py"));
 		
-		fd_tests_summary = $fopen("../testcase_raws/testcases_summary.txt", "r");
+		fd_tests_summary = $fopen("../testcase_raws/vga_testcases_summary.txt", "r");
 		while($fgets(line, fd_tests_summary))
 		begin
 			$display(line);
