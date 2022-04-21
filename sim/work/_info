@@ -1,0 +1,59 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/ZaKaye/Desktop/Pixiv/MEng_Study_2022_Winter/MEng2500Y/githubs/serializer/Mask-Generation/sim
+vmask_serializer
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1650505849
+!i10b 1
+!s100 iH3Z<@oQCb`oLi4UEK3d32
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I?_d4Y0LGR;=XSN[AnlJGF0
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1650505814
+8../rtl/mask_serializer.sv
+F../rtl/mask_serializer.sv
+!i122 96
+L0 1 56
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1650505848.000000
+!s107 ../rtl/mask_serializer.sv|
+!s90 -reportprogress|300|../rtl/mask_serializer.sv|
+!i113 1
+Z6 tCvgOpt 0
+vmask_serializer_tb
+R1
+R2
+!i10b 1
+!s100 D?z<`cC:6SN1JD3>oCUnb2
+R3
+IjHfi1iAj:gPckNSOblKnP3
+R4
+S1
+R0
+w1650505813
+8../tb/mask_serializer_tb.sv
+F../tb/mask_serializer_tb.sv
+!i122 97
+L0 1 142
+R5
+r1
+!s85 0
+31
+!s108 1650505849.000000
+!s107 ../tb/mask_serializer_tb.sv|
+!s90 -reportprogress|300|../tb/mask_serializer_tb.sv|
+!i113 1
+R6
