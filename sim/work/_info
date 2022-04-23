@@ -1,0 +1,61 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/ZaKaye/Desktop/Pixiv/MEng_Study_2022_Winter/MEng2500Y/githubs/mga_folder_cleanup/Mask-Generation/sim
+vmask_gen_VGA_tb
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1649724682
+!i10b 1
+!s100 ah:m_2XEGT=gE_FfDhnae2
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I>T8UU?SgXYFmFEie56cjE0
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1649724618
+8../tb/mask_gen_VGA_tb.sv
+F../tb/mask_gen_VGA_tb.sv
+!i122 15
+L0 1 184
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1649724682.000000
+!s107 ../tb/mask_gen_VGA_tb.sv|
+!s90 -reportprogress|300|../tb/mask_gen_VGA_tb.sv|
+!i113 1
+Z7 tCvgOpt 0
+nmask_gen_@v@g@a_tb
+vmask_generation_VGA
+R1
+R2
+!i10b 1
+!s100 RXTi]PHZ77hE_<7`f;F@@0
+R3
+IIZK22KbC7[30fACzFh3ie2
+R4
+S1
+R0
+w1649626914
+8../rtl/mask_generation_VGA.sv
+F../rtl/mask_generation_VGA.sv
+!i122 14
+L0 29 991
+R5
+r1
+!s85 0
+31
+R6
+!s107 ../rtl/mask_generation_VGA.sv|
+!s90 -reportprogress|300|../rtl/mask_generation_VGA.sv|
+!i113 1
+R7
+nmask_generation_@v@g@a
