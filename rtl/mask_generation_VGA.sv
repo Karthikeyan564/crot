@@ -34,7 +34,7 @@ module mask_generation_VGA
 
 	// Pattern Input passed through the micro-processor
 	input [4:0] pattern_w, 				// size of the pattern W / "Repeated Pattern" width: 5 (XXX00) to 8 (XXX11)
-	input pattern,						// Bits for the repeated pattern (0: pixel 0 in row n, 1: pixel 0 in row n, ..., 31: pixel 31 in row n )
+	input pattern,						// Bits for the repeated pattern (0: pixel 0 in row n, 1: pixel 1 in row n, ..., 31: pixel 31 in row n )
 	input [7:0] repeatedPattern,		// pattern, to be repeated
 	input load_pattern, 				// to load the pattern for repetition
 
@@ -129,8 +129,8 @@ endgenerate
 
 // Repeated Pattern Generation
 assign w5 =	!pattern_w[1] && !pattern_w[0];			
-assign w6 =	 pattern_w[1] && !pattern_w[0];			
-assign w7 =	!pattern_w[1] &&  pattern_w[0];			
+assign w6 =	!pattern_w[1] &&  pattern_w[0];			
+assign w7 =	 pattern_w[1] && !pattern_w[0];			
 assign w8 =	 pattern_w[1] &&  pattern_w[0];			
 				
 assign c[0] = 	p[0]	;		
@@ -912,7 +912,7 @@ begin
 
 	if(~rst_n) 
 	begin
-		 // rp_valid = 1'b0;
+		 rp_valid = 1'b0;
 		 reg_curr = 'd0;
 		 seedCounter ='d0;
 		 mg_mask ='d0;
