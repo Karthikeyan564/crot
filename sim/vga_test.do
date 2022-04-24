@@ -1,7 +1,7 @@
 vlib work
 vlog ../rtl/mask_generation_VGA.sv
 vlog ../tb/mask_gen_VGA_tb.sv
-vsim work.mask_gen_VGA_tb
+vsim -voptargs=+acc work.mask_gen_VGA_tb
 view wave
 add wave -position insertpoint  \
 sim:/mask_gen_VGA_tb/h_period \

@@ -1,0 +1,35 @@
+irun(64): 15.20-s079: (c) Copyright 1995-2019 Cadence Design Systems, Inc.
+TOOL:	irun(64)	15.20-s079: Started on Apr 23, 2022 at 18:22:55 EDT
+irun
+	-sv
+	-gui
+	../tb/mask_gen_VGA_tb.sv
+	../rtl/mask_generation_VGA.sv
+	../rtl/mask_serializer.sv
+	../rtl/MGTop.sv
+file: ../tb/mask_gen_VGA_tb.sv
+			if(line.match("(\/\/.*)?$")) 
+			            |
+ncvlog: *E,QAANBI (../tb/mask_gen_VGA_tb.sv,63|15): This is not a valid built in method name for this object. [SystemVerilog].
+			if(line.match("(\/\/.*)?$")) 
+			            |
+ncvlog: *E,NOTFXX (../tb/mask_gen_VGA_tb.sv,63|15): Expecting a function name [10.3.3(IEEE)].
+				line = line.prematch();
+				                   |
+ncvlog: *E,QAANBI (../tb/mask_gen_VGA_tb.sv,64|23): This is not a valid built in method name for this object. [SystemVerilog].
+				line = line.prematch();
+				                   |
+ncvlog: *E,NOTFXX (../tb/mask_gen_VGA_tb.sv,64|23): Expecting a function name [10.3.3(IEEE)].
+			if (!line.match("[0-f]")) 
+			              |
+ncvlog: *E,QAANBI (../tb/mask_gen_VGA_tb.sv,65|17): This is not a valid built in method name for this object. [SystemVerilog].
+			if (!line.match("[0-f]")) 
+			              |
+ncvlog: *E,NOTFXX (../tb/mask_gen_VGA_tb.sv,65|17): Expecting a function name [10.3.3(IEEE)].
+	module worklib.mask_gen_VGA_tb:sv
+		errors: 6, warnings: 0
+file: ../rtl/MGTop.sv
+	module worklib.MGTop:sv
+		errors: 0, warnings: 0
+irun: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 1).
+TOOL:	irun(64)	15.20-s079: Exiting on Apr 23, 2022 at 18:22:56 EDT  (total: 00:00:01)

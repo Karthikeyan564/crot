@@ -2,8 +2,11 @@ import re
 from utils import convert_hexstring_to_bin_list
 from utils import convert_binstring_to_bin_list
 from utils import convert_bin_list_to_hexstring
+import sys
 
 def main():
+    print("Running version:" + sys.version)
+
     with open("../testcase_raws/vga_testcases.txt", "r") as fd_tests:
         fd_tests_raw_output = open("../testcase_raws/vga_testcases_sw_output.txt", "w")
         

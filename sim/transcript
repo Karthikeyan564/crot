@@ -1,0 +1,61 @@
+# do run_vga_test.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim SE-64 vlog 10.7c Compiler 2018.08 Aug 17 2018
+# Start time: 21:16:59 on Apr 23,2022
+# vlog ../rtl/mask_generation_VGA.sv 
+# -- Compiling module mask_generation_VGA
+# 
+# Top level modules:
+# 	mask_generation_VGA
+# End time: 21:16:59 on Apr 23,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 10.7c Compiler 2018.08 Aug 17 2018
+# Start time: 21:16:59 on Apr 23,2022
+# vlog ../tb/mask_gen_VGA_tb.sv 
+# -- Compiling module mask_gen_VGA_tb
+# 
+# Top level modules:
+# 	mask_gen_VGA_tb
+# End time: 21:16:59 on Apr 23,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.mask_gen_VGA_tb 
+# Start time: 21:16:59 on Apr 23,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# //  ModelSim SE-64 10.7c Aug 17 2018Linux 4.19.0-20-amd64
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.mask_gen_VGA_tb(fast)
+# Loading work.mask_generation_VGA(fast)
+# Running version:3.7.3 (default, Jan 22 2021, 20:04:44) 
+# [GCC 8.3.0]
+# 11 00000 10101111 0	Passed
+# 
+# 11 00001 11111111 0	Passed
+# 
+# 11 00010 11111010 0	Passed
+# 
+# 11 00011 10101010 0	Passed
+# 
+# 00 01000 00000000 AAAA0000	Passed
+# 
+# 01 01000 00000000 AAAA0000	Passed
+# 
+# 01 11111 00000000 AAAA000F	Passed
+# 
+# 10 00000 00000000 BBBBBBBB	Passed
+# 
+# Break in Module mask_gen_VGA_tb at ../tb/mask_gen_VGA_tb.sv line 140
+# Stopped at ../tb/mask_gen_VGA_tb.sv line 140
+# End time: 21:17:16 on Apr 23,2022, Elapsed time: 0:00:17
+# Errors: 0, Warnings: 0

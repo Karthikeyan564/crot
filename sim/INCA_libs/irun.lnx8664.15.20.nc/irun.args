@@ -1,0 +1,10 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+-sv
+-gui
+../tb/mask_gen_VGA_tb.sv
+../rtl/mask_generation_VGA.sv
+../rtl/mask_serializer.sv
+../rtl/MGTop.sv

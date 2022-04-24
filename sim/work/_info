@@ -9,103 +9,139 @@ z2
 !i10f 100
 cModel Technology
 <<<<<<< HEAD
-Z0 dC:/Users/ZaKaye/Desktop/Pixiv/MEng_Study_2022_Winter/MEng2500Y/githubs/serializer/Mask-Generation/sim
-vmask_serializer
-Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1650505849
-!i10b 1
-!s100 iH3Z<@oQCb`oLi4UEK3d32
-Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I?_d4Y0LGR;=XSN[AnlJGF0
-Z4 VDg1SIo80bB@j0V0VzS_@n1
-S1
+!s108 1650505849.000000
+!s107 ../tb/mask_serializer_tb.sv|
+!s90 -reportprogress|300|../tb/mask_serializer_tb.sv|
+!i113 1
+Z0 !s108 1649724682.000000
+Z1 =======
 R0
-w1650505814
-8../rtl/mask_serializer.sv
-F../rtl/mask_serializer.sv
-!i122 96
-L0 1 56
-=======
-Z0 dC:/Users/ZaKaye/Desktop/Pixiv/MEng_Study_2022_Winter/MEng2500Y/githubs/mga_folder_cleanup/Mask-Generation/sim
-vmask_gen_VGA_tb
-Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1649724682
-!i10b 1
-!s100 ah:m_2XEGT=gE_FfDhnae2
-Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I>T8UU?SgXYFmFEie56cjE0
-Z4 VDg1SIo80bB@j0V0VzS_@n1
-S1
-R0
-w1649724618
-8../tb/mask_gen_VGA_tb.sv
-F../tb/mask_gen_VGA_tb.sv
-!i122 15
-L0 1 184
->>>>>>> main
-Z5 OV;L;2020.1;71
-r1
-!s85 0
-31
+Z2 !s107 ../rtl/mask_generation_VGA.sv|
+!s90 -reportprogress|300|../rtl/mask_generation_VGA.sv|
+!i113 1
+Z3 tCvgOpt 0
+nmask_generation_@v@g@a
 <<<<<<< HEAD
 !s108 1650505848.000000
 !s107 ../rtl/mask_serializer.sv|
 !s90 -reportprogress|300|../rtl/mask_serializer.sv|
 !i113 1
-Z6 tCvgOpt 0
-vmask_serializer_tb
-R1
-R2
-!i10b 1
-!s100 D?z<`cC:6SN1JD3>oCUnb2
 R3
-IjHfi1iAj:gPckNSOblKnP3
-R4
-S1
-R0
-w1650505813
-8../tb/mask_serializer_tb.sv
-F../tb/mask_serializer_tb.sv
-!i122 97
-L0 1 142
-=======
-Z6 !s108 1649724682.000000
-!s107 ../tb/mask_gen_VGA_tb.sv|
-!s90 -reportprogress|300|../tb/mask_gen_VGA_tb.sv|
-!i113 1
-Z7 tCvgOpt 0
-nmask_gen_@v@g@a_tb
-vmask_generation_VGA
-R1
-R2
-!i10b 1
-!s100 RXTi]PHZ77hE_<7`f;F@@0
-R3
-IIZK22KbC7[30fACzFh3ie2
-R4
-S1
-R0
-w1649626914
-8../rtl/mask_generation_VGA.sv
-F../rtl/mask_generation_VGA.sv
-!i122 14
-L0 29 991
+<<<<<<< HEAD
+Z4 dC:/Users/ZaKaye/Desktop/Pixiv/MEng_Study_2022_Winter/MEng2500Y/githubs/serializer/Mask-Generation/sim
+>>>>>>> main
+>>>>>>> main
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
 >>>>>>> main
 R5
 r1
 !s85 0
 31
-<<<<<<< HEAD
-!s108 1650505849.000000
-!s107 ../tb/mask_serializer_tb.sv|
-!s90 -reportprogress|300|../tb/mask_serializer_tb.sv|
-!i113 1
+T_opt
+!s110 1650756587
+V:n8L75XCQ3^@N:ZSo_PD;2
+Z6 04 15 4 work mask_gen_VGA_tb fast 0
+=1-000ae431a4f1-62648beb-26f57-61ef
+o-quiet -auto_acc_if_foreign -work work
+R3
+n@_opt
+Z7 OL;O;10.7c;67
+T_opt1
+!s110 1650762751
+V3ZP3cogicOjoJ><Mmh=cV1
 R6
-=======
-R6
-!s107 ../rtl/mask_generation_VGA.sv|
-!s90 -reportprogress|300|../rtl/mask_generation_VGA.sv|
-!i113 1
+=1-000ae431a4f1-6264a3ff-91652-72f1
+o-quiet -auto_acc_if_foreign -work work +acc
+R3
+n@_opt1
 R7
-nmask_generation_@v@g@a
->>>>>>> main
+vmask_gen_VGA_tb
+Z8 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
+Z9 !s110 1650763019
+!i10b 1
+!s100 P8T36<fi@B:QHMLiR=]?F1
+IcF;5inEDZKS;@TRFUGglB2
+Z10 VDg1SIo80bB@j0V0VzS_@n1
+!s105 mask_gen_VGA_tb_sv_unit
+S1
+Z11 d/fs1/eecg/roman/roberto/git/Mask-Generation/sim
+w1650762744
+8../tb/mask_gen_VGA_tb.sv
+F../tb/mask_gen_VGA_tb.sv
+L0 1
+Z12 OL;L;10.7c;67
+r1
+!s85 0
+31
+Z13 !s108 1650763019.000000
+Z14 !s107 ../tb/mask_gen_VGA_tb.sv|
+!s90 ../tb/mask_gen_VGA_tb.sv|
+!i113 0
+Z15 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+vmask_generation_VGA
+R8
+R9
+!i10b 1
+!s100 `J2If2S[c:Cm3hKgX[dSF3
+I`23kR5OG^aFAV>@1<NG`S2
+R10
+!s105 mask_generation_VGA_sv_unit
+S1
+R11
+w1650750383
+8../rtl/mask_generation_VGA.sv
+F../rtl/mask_generation_VGA.sv
+L0 29
+R12
+r1
+!s85 0
+31
+R13
+R2
+!s90 ../rtl/mask_generation_VGA.sv|
+!i113 0
+R15
+R3
+vmask_serializer
+Z16 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+!s110 1650505849
+!i10b 1
+!s100 iH3Z<@oQCb`oLi4UEK3d32
+Z17 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I?_d4Y0LGR;=XSN[AnlJGF0
+R10
+S1
+R4
+w1650505814
+8../rtl/mask_serializer.sv
+F../rtl/mask_serializer.sv
+!i122 96
+L0 1 56
+R1
+Z18 dC:/Users/ZaKaye/Desktop/Pixiv/MEng_Study_2022_Winter/MEng2500Y/githubs/mga_folder_cleanup/Mask-Generation/sim
+vmask_serializer_tb
+R16
+!s110 1649724682
+!i10b 1
+!s100 D?z<`cC:6SN1JD3>oCUnb2
+R17
+IjHfi1iAj:gPckNSOblKnP3
+R10
+S1
+R18
+w1650505813
+8../tb/mask_serializer_tb.sv
+F../tb/mask_serializer_tb.sv
+!i122 97
+L0 1 142
+R1
+R0
+R14
+!s90 -reportprogress|300|../tb/mask_gen_VGA_tb.sv|
+!i113 1
+R3
+nmask_gen_@v@g@a_tb

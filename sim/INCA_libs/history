@@ -1,0 +1,7 @@
+//
+// File created by:  irun
+// Do not modify this file
+
+s1::(23Apr2022:18:20:42):( irun -gui ../tb/mask_gen_VGA_tb.sv ../rtl/mask_generation_VGA.sv ../rtl/mask_serializer.sv ../rtl/MGTop.sv )
+s2::(23Apr2022:18:21:05):( irun -sv -gui ../tb/mask_gen_VGA_tb.sv ../rtl/mask_generation_VGA.sv ../rtl/mask_serializer.sv ../rtl/MGTop.sv )
+s3::(23Apr2022:18:22:55):( irun -sv -gui ../tb/mask_gen_VGA_tb.sv ../rtl/mask_generation_VGA.sv ../rtl/mask_serializer.sv ../rtl/MGTop.sv )

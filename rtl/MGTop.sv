@@ -23,8 +23,8 @@ module MGTop
     output logic [OP_CHANNEL_WIDTH-1:0] DOUT
     );
 
-    logic [0:639] mg_mask,       // Mask Generated
-    logic rp_valid               // Valid signal for the output
+    logic [0:639] mg_mask;       // Mask Generated
+    logic rp_valid;               // Valid signal for the output
 
     logic  [IP_CHANNEL_WIDTH-1:0] DIN;
     logic  load;
