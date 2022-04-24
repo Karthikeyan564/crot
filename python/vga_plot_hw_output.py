@@ -20,11 +20,14 @@ def main():
             for _ in range(0, 479):
                 bin_list_2d.append(bin_list_2d[0])
         
-        filename = str(index) + "__" + hw_results[index]["testcase"].replace(" ", "_") + ".png"
+        filename = str(index) + "__" + hw_results[index]["testcase"].replace(" ", "_")
         array = np.asarray(bin_list_2d, dtype=np.uint8)
         
         img = Image.fromarray(array)
-        img.save("../testcase_raws/vga_"+filename)
+        np.save("../testcase_raws/vga_"+filename+".npy", array)
+        img.save("../testcase_raws/vga_"+filename+".bmp")
+        img.save("../testcase_raws/vga_"+filename+".png")
+
     
 if __name__ == "__main__":
     main()
