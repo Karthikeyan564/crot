@@ -33,3 +33,7 @@
 
 # PyCache
 __pycache__/
+
+# Modelsim files
+work/
+transcript
