@@ -35,5 +35,6 @@
 __pycache__/
 
 # Modelsim files
-work/
-transcript
+*/work/*
+*/transcript
+docs/build

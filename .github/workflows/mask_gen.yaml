@@ -35,3 +35,7 @@ jobs:
         run: echo "$HOME/intelFPGA/20.1/modelsim_ase/bin" >> $GITHUB_PATH
       - name: Mask_gen Testbench
         run: cd $GITHUB_WORKSPACE/CI/scripts/ && chmod +x mask_gen && ./mask_gen
+      - name: Serializer Testbench
+        run: cd $GITHUB_WORKSPACE/CI/scripts/ && chmod +x serializer_test && ./serializer_test
+      - name: MGTop Testbench
+        run: cd $GITHUB_WORKSPACE/CI/scripts/ && chmod +x top_gen && ./top_gen

@@ -1,0 +1,16 @@
+# vsim -voptargs="+acc" -c work.mask_gen_Top_tb -do "onfinish stop;run -all;runStatus -full;quit" 
+# Start time: 11:17:01 on Jul 12,2022
+# Loading sv_std.std
+# Loading work.mask_gen_Top_tb
+# Loading work.MGTop
+# Loading work.mask_generation_VGA
+# Loading work.mask_serializer
+# onfinish stop
+# run -all
+# Break in Module mask_gen_Top_tb at ../tb/mask_gen_Top_tb.sv line 142
+# Stopped at ../tb/mask_gen_Top_tb.sv line 142
+# runStatus -full
+# break simulation_stop unknown
+# quit
+# End time: 11:17:02 on Jul 12,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

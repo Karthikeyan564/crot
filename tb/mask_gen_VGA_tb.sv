@@ -21,6 +21,8 @@ module mask_gen_VGA_tb ();
 
 	logic [0:639] mg_mask;
 	logic rp_valid;
+	logic gen_en;
+	assign gen_en=1;
 	
     mask_generation_VGA uut (.*);
 	

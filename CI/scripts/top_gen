@@ -1,0 +1,9 @@
+vlib work
+vlog ../../rtl/mask_serializer.sv
+vlog ../../rtl/mask_generation_VGA.sv
+vlog ../../rtl/MGTop.sv
+vlog ../tb/mask_gen_Top_tb.sv
+vsim -voptargs=+acc -c work.mask_gen_Top_tb -do "onfinish stop;run -all;runStatus -full;quit"
+python3 ../python/top_testcase_golden.py
+python3 ../python/top_compare_output.py
+$VSIM_EXIT_SIGNAL

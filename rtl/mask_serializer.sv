@@ -17,6 +17,7 @@ module mask_serializer
     output logic [OP_CHANNEL_WIDTH-1:0] DOUT
 );
 	logic [7:0] counter;
+	logic flag = 0; 
 
     logic [IP_CHANNEL_WIDTH-1:0] dint;
 
@@ -29,23 +30,26 @@ module mask_serializer
     // Load the data into internal register file and shift the data
     always @(posedge load or posedge clk) begin
 		if(rst_n==0) begin
-            dint <= 'b0;
+            		dint <= 'b0;
 			counter <= 8'b1;
 			done <= 1'b1;
 		end
-        else if(load==1) begin 
-            dint <= DIN;
+        else if(load==1 && flag ==0) begin 
+			flag <= 1;
+           		dint <= DIN;
 			counter <= 8'b1;
 			done <= 1'b0;
         end 
-		else if (next==1 && done==1'b0) begin
+		else if (flag == 1 && next==1 && done==1'b0) begin
             dint[IP_CHANNEL_WIDTH-1:0] <= {1'b0,dint[IP_CHANNEL_WIDTH-1:1]};
 			counter <= counter + 1'b1;
 			if ((sel[0]==1'b1 && counter==stepSel0) || (sel[1]==1'b1 && counter==stepSel1) || (sel[2]==1'b1 && counter==stepSel2)) begin
 				counter <= 8'b1;
 				done <= 1'b1;
+				flag <= 1'b0;
 			end 
         end
+		
     end
 
     genvar i;

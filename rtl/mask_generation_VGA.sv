@@ -25,11 +25,15 @@
 // HD  : 1280 x 720
 // FHD : 1920 x 1080
 
+/*!
+This implements mask_generation_VGA
+*/
 
 module mask_generation_VGA
 (
 	input clk,    						// Clock
 	input clk_en, 						// Clock Enable
+	input gen_en,                       // Generate enable
 	input rst_n,  						// Asynchronous reset active low
 
 	// Pattern Input passed through the micro-processor
@@ -921,7 +925,11 @@ begin
 		 seedLoaded = 'd0;
 		 p 			= 'd0;
 	end 
-	else if(clk_en)
+	else if(~gen_en)
+	begin
+		rp_valid=1'b0;
+	end
+	else if(clk_en && gen_en)
 	begin
 
 		// if (load_pattern && mask_type == 2'b11) // load pattern for the repeated Pattern

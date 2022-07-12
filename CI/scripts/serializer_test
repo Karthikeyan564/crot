@@ -1,0 +1,10 @@
+vlib work
+vlog ../../rtl/mask_serializer.sv
+vlog ../tb/mask_serializer_tb.sv
+tmpfile=$(mktemp /tmp/abc-script.XXXXXX);exec 3>'$tmpfile';exec 4<'$tmpfile';rm '$tmpfile';
+vsim -c work.mask_serializer_tb -do "run -all;runStatus -full;quit"
+read -u 4 a
+if [ $a!=0 ]
+then 
+exit 65
+fi
