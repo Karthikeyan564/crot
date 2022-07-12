@@ -20,13 +20,15 @@ jobs:
         # Save time on subsequent runs by caching the install of ModelSim.
         # Download is ~1.5GB and combined with the installation process it takes over 3 minutes.
       - name: Cache ModelSim
-        uses: actions/cache@v2
+        id: modelsim
+        uses: actions/cache@v3
         with:
-          path: $HOME/intelFPGA
+          path: modelsim.run
           key: ${{ runner.os }}-modelsim
       - name: Install ModelSim if not cached
+        if: steps.modelsim.outputs.cache-hit != 'true'
         run: |
-          stat $HOME/intelFPGA/20.1/modelsim_ase || (wget https://download.altera.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/ModelSimSetup-20.1.1.720-linux.run -O modelsim.run
+          wget https://download.altera.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/ModelSimSetup-20.1.1.720-linux.run -O modelsim.run
           chmod +x modelsim.run
           ./modelsim.run --mode unattended --accept_eula 1 --installdir $HOME
           sed -i '209 a\        4.[0-9]*)             vco="linux" ;;' $HOME/modelsim_ase/vco )
