@@ -78,7 +78,7 @@ module mask_gen_top
                          .mask_type(reg_file_to_ip.mod_in.mask_type.q),
                          .next(reg_file_to_ip.mod_in.next.q),
                          .imageResolution(ip_to_reg_file.mod_in.imgres.q),
-                         .DOUT(reg_file_to_ip.ctrl2.mod_out),
+                         .DOUT(reg_file_to_ip.mod_out),
                          );
 
 endmodule : mask_gen_top
