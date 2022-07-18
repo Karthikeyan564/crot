@@ -10,6 +10,8 @@
          { name: "MOD_OUT",
            desc: "Output of Mask_Gen",
            swaccess: "ro",
+           hwaccess: "hwo",
+           hwext: "true",
            fields: [
                { bits: "19:0"
                }
