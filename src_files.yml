@@ -1,12 +1,12 @@
-wide_alu:
+mask_gen:
   incdirs:
     - ../register_interface/include
     - ../register_interface/vendor/lowrisc_opentitan/include
   files:
     - gen_sv/mask_gen_reg_pkg.sv
     - gen_sv/mask_gen_reg_top.sv
-    - mask_generation_VGA.sv
-    - mask_serializer.sv
-    - MGTop.sv
+    - rtl/mask_generation_VGA.sv
+    - rtl/mask_serializer.sv
+    - rtl/MGTop.sv
   vlog_opts:
     - -L register_interface_lib
