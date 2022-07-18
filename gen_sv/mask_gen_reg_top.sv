@@ -63,30 +63,30 @@ module mask_gen_reg_top #(
   // Define SW related signals
   // Format: <reg>_<field>_{wd|we|qs}
   //        or <reg>_{wd|we|qs} if field == 1 or 0
-  logic [19:0] output_qs;
-  logic [4:0] input_pattern_w_wd;
-  logic input_pattern_w_we;
-  logic input_pattern_wd;
-  logic input_pattern_we;
-  logic [7:0] input_repeatedpattern_wd;
-  logic input_repeatedpattern_we;
-  logic input_load_pattern_wd;
-  logic input_load_pattern_we;
-  logic [1:0] input_mask_type_wd;
-  logic input_mask_type_we;
-  logic input_next_wd;
-  logic input_next_we;
-  logic [1:0] input_imgres_wd;
-  logic input_imgres_we;
+  logic [19:0] mod_out_qs;
+  logic [4:0] mod_in_pattern_w_wd;
+  logic mod_in_pattern_w_we;
+  logic mod_in_pattern_wd;
+  logic mod_in_pattern_we;
+  logic [7:0] mod_in_repeatedpattern_wd;
+  logic mod_in_repeatedpattern_we;
+  logic mod_in_load_pattern_wd;
+  logic mod_in_load_pattern_we;
+  logic [1:0] mod_in_mask_type_wd;
+  logic mod_in_mask_type_we;
+  logic mod_in_next_wd;
+  logic mod_in_next_we;
+  logic [1:0] mod_in_imgres_wd;
+  logic mod_in_imgres_we;
 
   // Register instances
-  // R[output]: V(False)
+  // R[mod_out]: V(False)
 
   prim_subreg #(
     .DW      (20),
     .SWACCESS("RO"),
     .RESVAL  (20'h0)
-  ) u_output (
+  ) u_mod_out (
     .clk_i   (clk_i    ),
     .rst_ni  (rst_ni  ),
 
@@ -99,27 +99,27 @@ module mask_gen_reg_top #(
 
     // to internal hardware
     .qe     (),
-    .q      (reg2hw.output.q ),
+    .q      (reg2hw.mod_out.q ),
 
     // to register interface (read)
-    .qs     (output_qs)
+    .qs     (mod_out_qs)
   );
 
 
-  // R[input]: V(False)
+  // R[mod_in]: V(False)
 
   //   F[pattern_w]: 4:0
   prim_subreg #(
     .DW      (5),
     .SWACCESS("WO"),
     .RESVAL  (5'h0)
-  ) u_input_pattern_w (
+  ) u_mod_in_pattern_w (
     .clk_i   (clk_i    ),
     .rst_ni  (rst_ni  ),
 
     // from register interface
-    .we     (input_pattern_w_we),
-    .wd     (input_pattern_w_wd),
+    .we     (mod_in_pattern_w_we),
+    .wd     (mod_in_pattern_w_wd),
 
     // from internal hardware
     .de     (1'b0),
@@ -127,7 +127,7 @@ module mask_gen_reg_top #(
 
     // to internal hardware
     .qe     (),
-    .q      (reg2hw.input.pattern_w.q ),
+    .q      (reg2hw.mod_in.pattern_w.q ),
 
     .qs     ()
   );
@@ -138,13 +138,13 @@ module mask_gen_reg_top #(
     .DW      (1),
     .SWACCESS("WO"),
     .RESVAL  (1'h0)
-  ) u_input_pattern (
+  ) u_mod_in_pattern (
     .clk_i   (clk_i    ),
     .rst_ni  (rst_ni  ),
 
     // from register interface
-    .we     (input_pattern_we),
-    .wd     (input_pattern_wd),
+    .we     (mod_in_pattern_we),
+    .wd     (mod_in_pattern_wd),
 
     // from internal hardware
     .de     (1'b0),
@@ -152,7 +152,7 @@ module mask_gen_reg_top #(
 
     // to internal hardware
     .qe     (),
-    .q      (reg2hw.input.pattern.q ),
+    .q      (reg2hw.mod_in.pattern.q ),
 
     .qs     ()
   );
@@ -163,13 +163,13 @@ module mask_gen_reg_top #(
     .DW      (8),
     .SWACCESS("WO"),
     .RESVAL  (8'h0)
-  ) u_input_repeatedpattern (
+  ) u_mod_in_repeatedpattern (
     .clk_i   (clk_i    ),
     .rst_ni  (rst_ni  ),
 
     // from register interface
-    .we     (input_repeatedpattern_we),
-    .wd     (input_repeatedpattern_wd),
+    .we     (mod_in_repeatedpattern_we),
+    .wd     (mod_in_repeatedpattern_wd),
 
     // from internal hardware
     .de     (1'b0),
@@ -177,7 +177,7 @@ module mask_gen_reg_top #(
 
     // to internal hardware
     .qe     (),
-    .q      (reg2hw.input.repeatedpattern.q ),
+    .q      (reg2hw.mod_in.repeatedpattern.q ),
 
     .qs     ()
   );
@@ -188,13 +188,13 @@ module mask_gen_reg_top #(
     .DW      (1),
     .SWACCESS("WO"),
     .RESVAL  (1'h0)
-  ) u_input_load_pattern (
+  ) u_mod_in_load_pattern (
     .clk_i   (clk_i    ),
     .rst_ni  (rst_ni  ),
 
     // from register interface
-    .we     (input_load_pattern_we),
-    .wd     (input_load_pattern_wd),
+    .we     (mod_in_load_pattern_we),
+    .wd     (mod_in_load_pattern_wd),
 
     // from internal hardware
     .de     (1'b0),
@@ -202,7 +202,7 @@ module mask_gen_reg_top #(
 
     // to internal hardware
     .qe     (),
-    .q      (reg2hw.input.load_pattern.q ),
+    .q      (reg2hw.mod_in.load_pattern.q ),
 
     .qs     ()
   );
@@ -213,13 +213,13 @@ module mask_gen_reg_top #(
     .DW      (2),
     .SWACCESS("WO"),
     .RESVAL  (2'h0)
-  ) u_input_mask_type (
+  ) u_mod_in_mask_type (
     .clk_i   (clk_i    ),
     .rst_ni  (rst_ni  ),
 
     // from register interface
-    .we     (input_mask_type_we),
-    .wd     (input_mask_type_wd),
+    .we     (mod_in_mask_type_we),
+    .wd     (mod_in_mask_type_wd),
 
     // from internal hardware
     .de     (1'b0),
@@ -227,7 +227,7 @@ module mask_gen_reg_top #(
 
     // to internal hardware
     .qe     (),
-    .q      (reg2hw.input.mask_type.q ),
+    .q      (reg2hw.mod_in.mask_type.q ),
 
     .qs     ()
   );
@@ -238,13 +238,13 @@ module mask_gen_reg_top #(
     .DW      (1),
     .SWACCESS("WO"),
     .RESVAL  (1'h0)
-  ) u_input_next (
+  ) u_mod_in_next (
     .clk_i   (clk_i    ),
     .rst_ni  (rst_ni  ),
 
     // from register interface
-    .we     (input_next_we),
-    .wd     (input_next_wd),
+    .we     (mod_in_next_we),
+    .wd     (mod_in_next_wd),
 
     // from internal hardware
     .de     (1'b0),
@@ -252,7 +252,7 @@ module mask_gen_reg_top #(
 
     // to internal hardware
     .qe     (),
-    .q      (reg2hw.input.next.q ),
+    .q      (reg2hw.mod_in.next.q ),
 
     .qs     ()
   );
@@ -263,13 +263,13 @@ module mask_gen_reg_top #(
     .DW      (2),
     .SWACCESS("WO"),
     .RESVAL  (2'h0)
-  ) u_input_imgres (
+  ) u_mod_in_imgres (
     .clk_i   (clk_i    ),
     .rst_ni  (rst_ni  ),
 
     // from register interface
-    .we     (input_imgres_we),
-    .wd     (input_imgres_wd),
+    .we     (mod_in_imgres_we),
+    .wd     (mod_in_imgres_wd),
 
     // from internal hardware
     .de     (1'b0),
@@ -277,7 +277,7 @@ module mask_gen_reg_top #(
 
     // to internal hardware
     .qe     (),
-    .q      (reg2hw.input.imgres.q ),
+    .q      (reg2hw.mod_in.imgres.q ),
 
     .qs     ()
   );
@@ -288,8 +288,8 @@ module mask_gen_reg_top #(
   logic [1:0] addr_hit;
   always_comb begin
     addr_hit = '0;
-    addr_hit[0] = (reg_addr == MASK_GEN_OUTPUT_OFFSET);
-    addr_hit[1] = (reg_addr == MASK_GEN_INPUT_OFFSET);
+    addr_hit[0] = (reg_addr == MASK_GEN_MOD_OUT_OFFSET);
+    addr_hit[1] = (reg_addr == MASK_GEN_MOD_IN_OFFSET);
   end
 
   assign addrmiss = (reg_re || reg_we) ? ~|addr_hit : 1'b0 ;
@@ -302,33 +302,33 @@ module mask_gen_reg_top #(
   end
 
 
-  assign input_pattern_w_we = addr_hit[1] & reg_we & ~wr_err;
-  assign input_pattern_w_wd = reg_wdata[4:0];
+  assign mod_in_pattern_w_we = addr_hit[1] & reg_we & ~wr_err;
+  assign mod_in_pattern_w_wd = reg_wdata[4:0];
 
-  assign input_pattern_we = addr_hit[1] & reg_we & ~wr_err;
-  assign input_pattern_wd = reg_wdata[5];
+  assign mod_in_pattern_we = addr_hit[1] & reg_we & ~wr_err;
+  assign mod_in_pattern_wd = reg_wdata[5];
 
-  assign input_repeatedpattern_we = addr_hit[1] & reg_we & ~wr_err;
-  assign input_repeatedpattern_wd = reg_wdata[13:6];
+  assign mod_in_repeatedpattern_we = addr_hit[1] & reg_we & ~wr_err;
+  assign mod_in_repeatedpattern_wd = reg_wdata[13:6];
 
-  assign input_load_pattern_we = addr_hit[1] & reg_we & ~wr_err;
-  assign input_load_pattern_wd = reg_wdata[14];
+  assign mod_in_load_pattern_we = addr_hit[1] & reg_we & ~wr_err;
+  assign mod_in_load_pattern_wd = reg_wdata[14];
 
-  assign input_mask_type_we = addr_hit[1] & reg_we & ~wr_err;
-  assign input_mask_type_wd = reg_wdata[16:15];
+  assign mod_in_mask_type_we = addr_hit[1] & reg_we & ~wr_err;
+  assign mod_in_mask_type_wd = reg_wdata[16:15];
 
-  assign input_next_we = addr_hit[1] & reg_we & ~wr_err;
-  assign input_next_wd = reg_wdata[17];
+  assign mod_in_next_we = addr_hit[1] & reg_we & ~wr_err;
+  assign mod_in_next_wd = reg_wdata[17];
 
-  assign input_imgres_we = addr_hit[1] & reg_we & ~wr_err;
-  assign input_imgres_wd = reg_wdata[19:18];
+  assign mod_in_imgres_we = addr_hit[1] & reg_we & ~wr_err;
+  assign mod_in_imgres_wd = reg_wdata[19:18];
 
   // Read data return
   always_comb begin
     reg_rdata_next = '0;
     unique case (1'b1)
       addr_hit[0]: begin
-        reg_rdata_next[19:0] = output_qs;
+        reg_rdata_next[19:0] = mod_out_qs;
       end
 
       addr_hit[1]: begin

@@ -11,7 +11,7 @@ package mask_gen_reg_pkg;
   ////////////////////////////
   typedef struct packed {
     logic [19:0] q;
-  } mask_gen_reg2hw_output_reg_t;
+  } mask_gen_reg2hw_mod_out_reg_t;
 
   typedef struct packed {
     struct packed {
@@ -35,7 +35,7 @@ package mask_gen_reg_pkg;
     struct packed {
       logic [1:0]  q;
     } imgres;
-  } mask_gen_reg2hw_input_reg_t;
+  } mask_gen_reg2hw_mod_in_reg_t;
 
 
 
@@ -43,8 +43,8 @@ package mask_gen_reg_pkg;
   // Register to internal design logic //
   ///////////////////////////////////////
   typedef struct packed {
-    mask_gen_reg2hw_output_reg_t output; // [40:21]
-    mask_gen_reg2hw_input_reg_t input; // [20:1]
+    mask_gen_reg2hw_mod_out_reg_t mod_out; // [40:21]
+    mask_gen_reg2hw_mod_in_reg_t mod_in; // [20:1]
   } mask_gen_reg2hw_t;
 
   ///////////////////////////////////////
@@ -52,20 +52,20 @@ package mask_gen_reg_pkg;
   ///////////////////////////////////////
 
   // Register Address
-  parameter logic [2:0] MASK_GEN_OUTPUT_OFFSET = 3'h 0;
-  parameter logic [2:0] MASK_GEN_INPUT_OFFSET = 3'h 4;
+  parameter logic [2:0] MASK_GEN_MOD_OUT_OFFSET = 3'h 0;
+  parameter logic [2:0] MASK_GEN_MOD_IN_OFFSET = 3'h 4;
 
 
   // Register Index
   typedef enum int {
-    MASK_GEN_OUTPUT,
-    MASK_GEN_INPUT
+    MASK_GEN_MOD_OUT,
+    MASK_GEN_MOD_IN
   } mask_gen_id_e;
 
   // Register width information to check illegal writes
   parameter logic [3:0] MASK_GEN_PERMIT [2] = '{
-    4'b 0111, // index[0] MASK_GEN_OUTPUT
-    4'b 0111  // index[1] MASK_GEN_INPUT
+    4'b 0111, // index[0] MASK_GEN_MOD_OUT
+    4'b 0111  // index[1] MASK_GEN_MOD_IN
   };
 endpackage
 
