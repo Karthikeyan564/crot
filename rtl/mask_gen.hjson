@@ -1,0 +1,46 @@
+{
+    name: "mask_gen",
+    clock_primary: "clk",
+    reset_primary: "rst_n",
+    bus_device: "reg",
+    bus_host: "",
+
+    regwidth: "32",
+    registers: [        
+         { name: "OUTPUT",
+           desc: "Output of Mask_Gen",
+           swaccess: "ro",
+           fields: [
+               { bits: "19:0"
+               }
+           ],
+         },
+        { name: "INPUT",
+          desc: "Input of Mask_Gen",
+          swaccess: "wo",
+          fields: [
+              { bits: "4:0", name: "PATTERN_W",
+                desc: "Size of pattern W"
+              }
+              { bits: "5", name: "PATTERN",
+                desc: "Bits for repeated pattern."
+              }
+              { bits: "13:6", name: "REPEATEDPATTERN",
+                desc: "pattern, to be repeated"
+              }
+              { bits: "14", name: "LOAD_PATTERN",
+                desc: "To load the pattern for repetition"
+              }
+              { bits: "16:15", name: "MASK_TYPE",
+                desc: "Type of Masks"
+              }
+              { bits: "17", name: "NEXT",
+                desc: "next"
+              }
+              { bits: "19:18", name: "IMGRES",
+                desc: "Image Resolution"
+              }
+          ]
+        }
+      ]
+}
