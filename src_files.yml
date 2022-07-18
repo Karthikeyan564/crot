@@ -8,5 +8,6 @@ mask_gen:
     - rtl/mask_generation_VGA.sv
     - rtl/mask_serializer.sv
     - rtl/MGTop.sv
+    - rtl/mask_gen_top.sv
   vlog_opts:
     - -L register_interface_lib
