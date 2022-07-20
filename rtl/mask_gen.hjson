@@ -9,7 +9,7 @@
     registers: [        
          { name: "MOD_OUT",
            desc: "Output of Mask_Gen",
-           swaccess: "ro",
+           swaccess: "rw",
            hwaccess: "hwo",
            hwext: "true",
            fields: [
@@ -19,7 +19,7 @@
          },
         { name: "MOD_IN",
           desc: "Input of Mask_Gen",
-          swaccess: "wo",
+          swaccess: "rw",
           fields: [
               { bits: "4:0", name: "PATTERN_W",
                 desc: "Size of pattern W"

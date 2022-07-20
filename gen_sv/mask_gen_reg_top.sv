@@ -18,6 +18,7 @@ module mask_gen_reg_top #(
   output reg_rsp_t reg_rsp_o,
   // To HW
   output mask_gen_reg_pkg::mask_gen_reg2hw_t reg2hw, // Write
+  input  mask_gen_reg_pkg::mask_gen_hw2reg_t hw2reg, // Read
 
   // Config
   input devmode_i // If 1, explicit error return for unmapped register access
@@ -64,44 +65,44 @@ module mask_gen_reg_top #(
   // Format: <reg>_<field>_{wd|we|qs}
   //        or <reg>_{wd|we|qs} if field == 1 or 0
   logic [19:0] mod_out_qs;
+  logic [19:0] mod_out_wd;
+  logic mod_out_we;
+  logic mod_out_re;
+  logic [4:0] mod_in_pattern_w_qs;
   logic [4:0] mod_in_pattern_w_wd;
   logic mod_in_pattern_w_we;
+  logic mod_in_pattern_qs;
   logic mod_in_pattern_wd;
   logic mod_in_pattern_we;
+  logic [7:0] mod_in_repeatedpattern_qs;
   logic [7:0] mod_in_repeatedpattern_wd;
   logic mod_in_repeatedpattern_we;
+  logic mod_in_load_pattern_qs;
   logic mod_in_load_pattern_wd;
   logic mod_in_load_pattern_we;
+  logic [1:0] mod_in_mask_type_qs;
   logic [1:0] mod_in_mask_type_wd;
   logic mod_in_mask_type_we;
+  logic mod_in_next_qs;
   logic mod_in_next_wd;
   logic mod_in_next_we;
+  logic [1:0] mod_in_imgres_qs;
   logic [1:0] mod_in_imgres_wd;
   logic mod_in_imgres_we;
 
   // Register instances
-  // R[mod_out]: V(False)
+  // R[mod_out]: V(True)
 
-  prim_subreg #(
-    .DW      (20),
-    .SWACCESS("RO"),
-    .RESVAL  (20'h0)
+  prim_subreg_ext #(
+    .DW    (20)
   ) u_mod_out (
-    .clk_i   (clk_i    ),
-    .rst_ni  (rst_ni  ),
-
-    .we     (1'b0),
-    .wd     ('0  ),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0  ),
-
-    // to internal hardware
+    .re     (mod_out_re),
+    .we     (mod_out_we),
+    .wd     (mod_out_wd),
+    .d      (hw2reg.mod_out.d),
+    .qre    (),
     .qe     (),
-    .q      (reg2hw.mod_out.q ),
-
-    // to register interface (read)
+    .q      (),
     .qs     (mod_out_qs)
   );
 
@@ -111,7 +112,7 @@ module mask_gen_reg_top #(
   //   F[pattern_w]: 4:0
   prim_subreg #(
     .DW      (5),
-    .SWACCESS("WO"),
+    .SWACCESS("RW"),
     .RESVAL  (5'h0)
   ) u_mod_in_pattern_w (
     .clk_i   (clk_i    ),
@@ -129,14 +130,15 @@ module mask_gen_reg_top #(
     .qe     (),
     .q      (reg2hw.mod_in.pattern_w.q ),
 
-    .qs     ()
+    // to register interface (read)
+    .qs     (mod_in_pattern_w_qs)
   );
 
 
   //   F[pattern]: 5:5
   prim_subreg #(
     .DW      (1),
-    .SWACCESS("WO"),
+    .SWACCESS("RW"),
     .RESVAL  (1'h0)
   ) u_mod_in_pattern (
     .clk_i   (clk_i    ),
@@ -154,14 +156,15 @@ module mask_gen_reg_top #(
     .qe     (),
     .q      (reg2hw.mod_in.pattern.q ),
 
-    .qs     ()
+    // to register interface (read)
+    .qs     (mod_in_pattern_qs)
   );
 
 
   //   F[repeatedpattern]: 13:6
   prim_subreg #(
     .DW      (8),
-    .SWACCESS("WO"),
+    .SWACCESS("RW"),
     .RESVAL  (8'h0)
   ) u_mod_in_repeatedpattern (
     .clk_i   (clk_i    ),
@@ -179,14 +182,15 @@ module mask_gen_reg_top #(
     .qe     (),
     .q      (reg2hw.mod_in.repeatedpattern.q ),
 
-    .qs     ()
+    // to register interface (read)
+    .qs     (mod_in_repeatedpattern_qs)
   );
 
 
   //   F[load_pattern]: 14:14
   prim_subreg #(
     .DW      (1),
-    .SWACCESS("WO"),
+    .SWACCESS("RW"),
     .RESVAL  (1'h0)
   ) u_mod_in_load_pattern (
     .clk_i   (clk_i    ),
@@ -204,14 +208,15 @@ module mask_gen_reg_top #(
     .qe     (),
     .q      (reg2hw.mod_in.load_pattern.q ),
 
-    .qs     ()
+    // to register interface (read)
+    .qs     (mod_in_load_pattern_qs)
   );
 
 
   //   F[mask_type]: 16:15
   prim_subreg #(
     .DW      (2),
-    .SWACCESS("WO"),
+    .SWACCESS("RW"),
     .RESVAL  (2'h0)
   ) u_mod_in_mask_type (
     .clk_i   (clk_i    ),
@@ -229,14 +234,15 @@ module mask_gen_reg_top #(
     .qe     (),
     .q      (reg2hw.mod_in.mask_type.q ),
 
-    .qs     ()
+    // to register interface (read)
+    .qs     (mod_in_mask_type_qs)
   );
 
 
   //   F[next]: 17:17
   prim_subreg #(
     .DW      (1),
-    .SWACCESS("WO"),
+    .SWACCESS("RW"),
     .RESVAL  (1'h0)
   ) u_mod_in_next (
     .clk_i   (clk_i    ),
@@ -254,14 +260,15 @@ module mask_gen_reg_top #(
     .qe     (),
     .q      (reg2hw.mod_in.next.q ),
 
-    .qs     ()
+    // to register interface (read)
+    .qs     (mod_in_next_qs)
   );
 
 
   //   F[imgres]: 19:18
   prim_subreg #(
     .DW      (2),
-    .SWACCESS("WO"),
+    .SWACCESS("RW"),
     .RESVAL  (2'h0)
   ) u_mod_in_imgres (
     .clk_i   (clk_i    ),
@@ -279,7 +286,8 @@ module mask_gen_reg_top #(
     .qe     (),
     .q      (reg2hw.mod_in.imgres.q ),
 
-    .qs     ()
+    // to register interface (read)
+    .qs     (mod_in_imgres_qs)
   );
 
 
@@ -301,6 +309,9 @@ module mask_gen_reg_top #(
     if (addr_hit[1] && reg_we && (MASK_GEN_PERMIT[1] != (MASK_GEN_PERMIT[1] & reg_be))) wr_err = 1'b1 ;
   end
 
+  assign mod_out_we = addr_hit[0] & reg_we & ~wr_err;
+  assign mod_out_wd = reg_wdata[19:0];
+  assign mod_out_re = addr_hit[0] && reg_re;
 
   assign mod_in_pattern_w_we = addr_hit[1] & reg_we & ~wr_err;
   assign mod_in_pattern_w_wd = reg_wdata[4:0];
@@ -332,13 +343,13 @@ module mask_gen_reg_top #(
       end
 
       addr_hit[1]: begin
-        reg_rdata_next[4:0] = '0;
-        reg_rdata_next[5] = '0;
-        reg_rdata_next[13:6] = '0;
-        reg_rdata_next[14] = '0;
-        reg_rdata_next[16:15] = '0;
-        reg_rdata_next[17] = '0;
-        reg_rdata_next[19:18] = '0;
+        reg_rdata_next[4:0] = mod_in_pattern_w_qs;
+        reg_rdata_next[5] = mod_in_pattern_qs;
+        reg_rdata_next[13:6] = mod_in_repeatedpattern_qs;
+        reg_rdata_next[14] = mod_in_load_pattern_qs;
+        reg_rdata_next[16:15] = mod_in_mask_type_qs;
+        reg_rdata_next[17] = mod_in_next_qs;
+        reg_rdata_next[19:18] = mod_in_imgres_qs;
       end
 
       default: begin

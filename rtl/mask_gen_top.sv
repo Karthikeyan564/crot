@@ -9,8 +9,8 @@ module mask_gen_top
       parameter int unsigned AXI_USER_WIDTH
       )
     (
-     input logic clk,
-     input logic rst_n,
+     input logic clk_i,
+     input logic rst_ni,
      input logic test_mode_i,
 
      AXI_BUS.Slave axi_slave
@@ -69,16 +69,17 @@ module mask_gen_top
     );
 
     MGTop i_mask_gen (
-                         .clk,
-                         .rst_n,
+                         .clk(clk_i),
+                         .rst_n(rst_ni),
+                         .clk_en(1'b1),
                          .pattern_w(reg_file_to_ip.mod_in.pattern_w.q),
 			 .pattern(reg_file_to_ip.mod_in.pattern.q),
                          .repeatedPattern(reg_file_to_ip.mod_in.repeatedpattern.q),
                          .load_pattern(reg_file_to_ip.mod_in.load_pattern.q),
                          .mask_type(reg_file_to_ip.mod_in.mask_type.q),
-                         .next(reg_file_to_ip.mod_in.next.q),
-                         .imageResolution(ip_to_reg_file.mod_in.imgres.q),
-                         .DOUT(reg_file_to_ip.mod_out),
+                         .next(1'b1),//reg_file_to_ip.mod_in.next.q),
+                         .imageResolution(reg_file_to_ip.mod_in.imgres.q),
+                         .DOUT()//ip_to_reg_file.mod_out)
                          );
 
 endmodule : mask_gen_top

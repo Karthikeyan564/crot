@@ -10,10 +10,6 @@ package mask_gen_reg_pkg;
   // Typedefs for registers //
   ////////////////////////////
   typedef struct packed {
-    logic [19:0] q;
-  } mask_gen_reg2hw_mod_out_reg_t;
-
-  typedef struct packed {
     struct packed {
       logic [4:0]  q;
     } pattern_w;
@@ -38,18 +34,24 @@ package mask_gen_reg_pkg;
   } mask_gen_reg2hw_mod_in_reg_t;
 
 
+  typedef struct packed {
+    logic [19:0] d;
+  } mask_gen_hw2reg_mod_out_reg_t;
+
 
   ///////////////////////////////////////
   // Register to internal design logic //
   ///////////////////////////////////////
   typedef struct packed {
-    mask_gen_reg2hw_mod_out_reg_t mod_out; // [40:21]
     mask_gen_reg2hw_mod_in_reg_t mod_in; // [20:1]
   } mask_gen_reg2hw_t;
 
   ///////////////////////////////////////
   // Internal design logic to register //
   ///////////////////////////////////////
+  typedef struct packed {
+    mask_gen_hw2reg_mod_out_reg_t mod_out; // [20:21]
+  } mask_gen_hw2reg_t;
 
   // Register Address
   parameter logic [2:0] MASK_GEN_MOD_OUT_OFFSET = 3'h 0;
