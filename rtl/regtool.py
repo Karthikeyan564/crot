@@ -1,1 +1,0 @@
-/fs1/eecg/roman/rengar13/inte/Mask-Generation/rtl/register_interface/vendor/lowrisc_opentitan/util/regtool.py
