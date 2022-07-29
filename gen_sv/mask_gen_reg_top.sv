@@ -67,7 +67,6 @@ module mask_gen_reg_top #(
   logic [19:0] mod_out_qs;
   logic [19:0] mod_out_wd;
   logic mod_out_we;
-  logic mod_out_re;
   logic [4:0] mod_in_pattern_w_qs;
   logic [4:0] mod_in_pattern_w_wd;
   logic mod_in_pattern_w_we;
@@ -91,18 +90,29 @@ module mask_gen_reg_top #(
   logic mod_in_imgres_we;
 
   // Register instances
-  // R[mod_out]: V(True)
+  // R[mod_out]: V(False)
 
-  prim_subreg_ext #(
-    .DW    (20)
+  prim_subreg #(
+    .DW      (20),
+    .SWACCESS("RW"),
+    .RESVAL  (20'h0)
   ) u_mod_out (
-    .re     (mod_out_re),
+    .clk_i   (clk_i    ),
+    .rst_ni  (rst_ni  ),
+
+    // from register interface
     .we     (mod_out_we),
     .wd     (mod_out_wd),
-    .d      (hw2reg.mod_out.d),
-    .qre    (),
+
+    // from internal hardware
+    .de     (hw2reg.mod_out.de),
+    .d      (hw2reg.mod_out.d ),
+
+    // to internal hardware
     .qe     (),
     .q      (),
+
+    // to register interface (read)
     .qs     (mod_out_qs)
   );
 
@@ -311,7 +321,6 @@ module mask_gen_reg_top #(
 
   assign mod_out_we = addr_hit[0] & reg_we & ~wr_err;
   assign mod_out_wd = reg_wdata[19:0];
-  assign mod_out_re = addr_hit[0] && reg_re;
 
   assign mod_in_pattern_w_we = addr_hit[1] & reg_we & ~wr_err;
   assign mod_in_pattern_w_wd = reg_wdata[4:0];

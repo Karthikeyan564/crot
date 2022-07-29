@@ -36,6 +36,7 @@ package mask_gen_reg_pkg;
 
   typedef struct packed {
     logic [19:0] d;
+    logic        de;
   } mask_gen_hw2reg_mod_out_reg_t;
 
 
@@ -50,7 +51,7 @@ package mask_gen_reg_pkg;
   // Internal design logic to register //
   ///////////////////////////////////////
   typedef struct packed {
-    mask_gen_hw2reg_mod_out_reg_t mod_out; // [20:21]
+    mask_gen_hw2reg_mod_out_reg_t mod_out; // [21:22]
   } mask_gen_hw2reg_t;
 
   // Register Address
